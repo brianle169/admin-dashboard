@@ -1,0 +1,72 @@
+* {
+	border: 1px solid red;
+	padding: 0;
+	margin: 0;
+	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+	height: 100vh;
+}
+
+.wrapper {
+	height: 100%;
+	display: grid;
+	grid-template: 1fr 5fr / 1fr 5fr;
+}
+
+.wrapper > div {
+	text-align: center;
+}
+
+.side-bar {
+	grid-area: 1 / 1 / 3 / 2;
+	display: grid;
+	grid-template-rows: 1fr 4fr 4fr;
+}
+
+.side-bar > div {
+	display: grid;
+}
+
+.side-bar .dashboard-logo {
+	grid-template-columns: 1fr 2fr;
+}
+
+.side-bar .dashboard-functionalities {
+	grid-template: repeat(6, 1fr) / 1fr 2fr;
+}
+
+.side-bar .dashboard-settings {
+	grid-template: repeat(3, 1fr) / 1fr 2fr;
+}
+
+.header {
+	grid-area: 1 / 2 / 2 / 3;
+	display: grid;
+	grid-template-rows: 1fr 1fr;
+}
+
+.header > .upper-header {
+	display: grid;
+	grid-template-columns: 3fr 2fr;
+}
+
+.header > .lower-header {
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+}
+
+.main-content {
+	grid-area: 2 / 2 / 3 / 3;
+	display: grid;
+	grid-template: 1fr 1fr / 3fr 1fr;
+}
+
+.main-content > div {
+	display: grid;
+}
+
+.main-content .projects {
+	grid-area: 1 / 1 / 3 / 2;
+}

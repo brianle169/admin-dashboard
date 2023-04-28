@@ -16,12 +16,17 @@ body {
 	height: 100%;
 	display: grid;
 	grid-template: 1fr 5fr / 1fr 5fr;
+	row-gap: 15px;
 }
 
 a:link,
 a:visited {
 	text-decoration: none;
 	color: var(--color-white);
+}
+
+a:hover {
+	text-decoration: underline;
 }
 
 .side-bar {
@@ -82,12 +87,14 @@ a:visited {
 	display: grid;
 	grid-template-rows: 1fr 1fr;
 	row-gap: 15px;
+	padding-bottom: 15px;
+	box-shadow: 0px 5px 7px 1px rgba(0, 0, 0, 0.375);
 }
 
 .header > .upper-header {
 	display: grid;
 	grid-template-columns: 3fr 2fr;
-	padding: 0px 50px;
+	padding: 0px 0px 0px 50px;
 }
 
 .upper-header .search-area,
@@ -109,30 +116,31 @@ a:visited {
 }
 
 .search-area input[type="search"]:focus {
-	border-color: #0d9488;
 	transform: translateY(-10%);
 	transition: all 0.1s;
 	box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.473);
 }
 
 .search-area input[type="search"]:hover:not(:focus) {
-	background-color: #c3ccca61;
+	background-color: #7ecbbc87;
 }
 
 .search-area input[type="search"] {
 	display: grid;
 	width: 80%;
 	height: 2rem;
-	border: 2px solid #0d9488;
+	/* border: 2px solid #0d9488; */
+	border: none;
 	border-radius: 30px;
 	padding: 10px 15px;
 	font-size: 1.1rem;
 	font-weight: 700;
+	background: #99f6e387;
 }
 
 .upper-header .admin-notification {
 	grid-template-columns: repeat(3, 25%);
-	justify-content: end;
+	justify-content: center;
 	justify-items: end;
 	font-size: 1.1rem;
 	font-weight: 700;
@@ -146,8 +154,9 @@ a:visited {
 }
 
 .admin-notification button:hover,
-.admin-notification > .profile-image > img:hover,
-.admin-notification > .admin-name:hover {
+.admin-notification .profile-image > img:hover,
+.admin-notification .admin-name:hover,
+.admin-greeting .profile-image > img:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 	transition: all 0.1s;
@@ -159,7 +168,8 @@ a:visited {
 	justify-items: center;
 }
 
-.admin-notification > .profile-image > img {
+.admin-notification .profile-image > img,
+.admin-greeting .profile-image > img {
 	border-radius: 50%;
 	border: 2px solid #042f2e;
 }
@@ -171,22 +181,64 @@ a:visited {
 .header > .lower-header {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
-	padding: 0px 50px;
+	padding: 0px 0px 0px 50px;
 }
 
 .lower-header .admin-greeting {
 	display: grid;
-	grid-template: 1fr 1fr / 1fr 3fr;
-}
-
-.lower-header .action-buttons {
-	display: grid;
-	grid-template-columns: repeat(3, 1fr);
-	gap: 50px;
+	grid-template: 1fr 2fr / auto 75%;
+	justify-content: start;
+	column-gap: 15px;
+	align-items: center;
 }
 
 .admin-greeting .profile-image {
 	grid-row: 1 / span 2;
+	display: grid;
+	align-items: center;
+}
+
+.admin-greeting p {
+	font-weight: 700;
+	color: #134e4a;
+}
+
+.admin-greeting p.admin-name {
+	font-size: 1.6rem;
+}
+
+.lower-header .action-buttons {
+	display: grid;
+	grid-template-columns: repeat(3, 20%);
+	gap: 35px;
+	align-items: end;
+	justify-content: center;
+}
+
+.action-buttons button {
+	outline: none;
+	height: 70%;
+	background-color: #2dd4bf;
+	border: none;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #f0fdfa;
+	border-radius: 20px;
+	overflow: hidden;
+	padding: 10px;
+	text-align: center;
+}
+
+.action-buttons button:hover {
+	box-shadow: 3px 3px 2px 1px rgba(0, 0, 0, 0.462);
+	transform: translateY(-5%);
+	transition: all 0.1s;
+}
+
+.action-buttons button:active {
+	box-shadow: none;
+	transform: translateY(0);
+	transition: all 0.1s;
 }
 
 .main-content {

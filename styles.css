@@ -3,6 +3,7 @@
 	margin: 0;
 	box-sizing: border-box;
 	font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+	/* border: 1px solid red; */
 
 	--color-white: #f0fdfa;
 }
@@ -21,10 +22,6 @@ a:link,
 a:visited {
 	text-decoration: none;
 	color: var(--color-white);
-}
-
-.wrapper > div > div {
-	/* border: 1px solid red; */
 }
 
 .side-bar {
@@ -84,26 +81,97 @@ a:visited {
 	grid-area: 1 / 2 / 2 / 3;
 	display: grid;
 	grid-template-rows: 1fr 1fr;
+	row-gap: 15px;
 }
 
 .header > .upper-header {
 	display: grid;
 	grid-template-columns: 3fr 2fr;
+	padding: 0px 50px;
+}
+
+.upper-header .search-area,
+.upper-header .admin-notification {
+	display: grid;
+	align-items: center;
 }
 
 .upper-header .search-area {
+	grid-template-columns: auto 1fr;
+	justify-items: start;
+}
+
+/* Reset default style */
+.search-area #search-bar {
+	appearance: none;
+	-moz-appearance: none;
+	outline: none;
+}
+
+.search-area input[type="search"]:focus {
+	border-color: #0d9488;
+	transform: translateY(-10%);
+	transition: all 0.1s;
+	box-shadow: 5px 5px 3px 0px rgba(0, 0, 0, 0.473);
+}
+
+.search-area input[type="search"]:hover:not(:focus) {
+	background-color: #c3ccca61;
+}
+
+.search-area input[type="search"] {
 	display: grid;
-	grid-template-columns: 1fr 4fr;
+	width: 80%;
+	height: 2rem;
+	border: 2px solid #0d9488;
+	border-radius: 30px;
+	padding: 10px 15px;
+	font-size: 1.1rem;
+	font-weight: 700;
 }
 
 .upper-header .admin-notification {
+	grid-template-columns: repeat(3, 25%);
+	justify-content: end;
+	justify-items: end;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: #0d9488;
+}
+
+.admin-notification button {
+	background: none;
+	border: none;
+	outline: none;
+}
+
+.admin-notification button:hover,
+.admin-notification > .profile-image > img:hover,
+.admin-notification > .admin-name:hover {
+	cursor: pointer;
+	transform: scale(1.1);
+	transition: all 0.1s;
+}
+
+.admin-notification > .profile-image {
 	display: grid;
-	grid-template-columns: 1fr 2fr 4fr;
+	justify-self: center;
+	justify-items: center;
+}
+
+.admin-notification > .profile-image > img {
+	border-radius: 50%;
+	border: 2px solid #042f2e;
+}
+
+.admin-notification > .admin-name {
+	justify-self: start;
 }
 
 .header > .lower-header {
 	display: grid;
 	grid-template-columns: 1fr 1fr;
+	padding: 0px 50px;
 }
 
 .lower-header .admin-greeting {

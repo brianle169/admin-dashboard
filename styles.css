@@ -168,7 +168,8 @@ a:hover {
 .dashboard-functionalities button:hover,
 .dashboard-setting button:hover,
 .dashboard-logo button:hover,
-.card > .card-icons button:hover {
+.card > .card-icons button:hover,
+.trending-user > div.profile-image > img:hover {
 	cursor: pointer;
 	transform: scale(1.1);
 	transition: all 0.1s;
@@ -181,7 +182,8 @@ a:hover {
 }
 
 .admin-notification .profile-image > img,
-.admin-greeting .profile-image > img {
+.admin-greeting .profile-image > img,
+.trending-user > div.profile-image > img {
 	border-radius: 50%;
 	border: 2px solid var(--color-body-text);
 }
@@ -370,4 +372,32 @@ a:hover {
 .announcement-board .announcement-body {
 	font-size: 0.9rem;
 	text-align: justify;
+}
+
+.trending-board {
+	padding: 20px 20px;
+	grid-template-rows: repeat(4, 1fr);
+	align-items: center;
+}
+
+.trending-board .trending-user {
+	display: grid;
+	grid-template: max-content max-content / auto 1fr;
+	gap: 0px 10px;
+	align-items: center;
+}
+
+.trending-user > div.profile-image {
+	grid-area: 1 / 1 / 3 / 2;
+	display: grid;
+	align-items: end;
+}
+
+.trending-user > p > a {
+	color: var(--color-body-text);
+	font-weight: 500;
+}
+
+.trending-user > p:last-of-type {
+	color: #042f2e7f;
 }
